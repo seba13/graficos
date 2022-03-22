@@ -1,0 +1,57 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field>
+                <input matInput placeholder="Buscar nombre de filtro..." value="" (keyup)="filterNameSearch($event)">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="col-12">
+            <ngx-datatable #tableMySearch class="material striped expandable" [rows]="rows"
+                  [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'" [limit]="10" [scrollbarH]="true"
+                  [footerHeight]="100" [sorts]="[{prop: 'date', dir: 'desc'}]" 
+                  (page)='setPage($event)'>
+          
+                  <!--- TEMPLATE DATE --->
+                  <ng-template #dateTemplate let-row="row" let-value="value" let-i="index">
+                        <span>a</span>
+                      </ng-template>
+                  <!--- /TEMPLATE DATE --->
+                   <!--- TEMPLATE STATUS --->
+                   <ng-template #statusTemplate let-row="row" let-value="value" let-i="index">
+                    <span *ngIf ="row.busqueda_eliminada == 0" class="bg-success p-2 text-white">
+                      Activada
+                    </span>
+                    <span *ngIf ="row.busqueda_eliminada == 1" class="bg-danger p-2 text-white">Desactivada</span>
+                  </ng-template>
+                 
+          
+                  <!--- TEMPLATE FOOTER --->
+                  <ngx-datatable-footer>
+                    <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize"
+                      let-selectedCount="selectedCount" let-curPage="curPage" let-offset="offset" let-isVisible="isVisible">
+                      <div class="row infoFooter">
+                        <div class="col-12">
+                          <div>
+                            Total: {{ rowCount }} | Mostrado: {{ pageSize }} | Página: {{ curPage }}
+                          </div>
+                        </div>
+                        <br>
+                        <div class="col-12">
+                          <datatable-pager [pagerLeftArrowIcon]="'datatable-icon-left'"
+                            [pagerRightArrowIcon]="'datatable-icon-right'" [pagerPreviousIcon]="'datatable-icon-prev'"
+                            [pagerNextIcon]="'datatable-icon-skip'" [page]="curPage" [size]="pageSize" [count]="rowCount"
+                            [hidden]="!((rowCount / pageSize) > 1)" (change)="table.onFooterPage($event)">
+                          </datatable-pager>
+                        </div>
+                      </div>
+                      <br>
+                    </ng-template>
+                  </ngx-datatable-footer>
+                  <!--- /TEMPLATE FOOTER --->
+          
+                </ngx-datatable>
+        </div>
+    </div>
+</div>
