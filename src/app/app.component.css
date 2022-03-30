@@ -1,0 +1,20 @@
+
+mat-drawer{
+    border-top-right-radius: 25px;
+    width: 300px;
+    background-color: #023047;
+    color: white;
+    text-align: center;
+}
+
+mat-drawer h2{
+    text-decoration: underline;
+}
+ul{
+    list-style: none;
+}
+
+
+.example-container{
+    height: 100vh;
+}

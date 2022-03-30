@@ -52,5 +52,7 @@ export class EdadComponent implements OnInit {
     let series = chart.series.push(new am4charts.PieSeries3D());
     series.dataFields.value = 'count';
     series.dataFields.category = 'rango_etario';
+
+    
   }
 }

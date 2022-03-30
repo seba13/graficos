@@ -8,6 +8,12 @@ import { ImpresionesComponent } from './components/impresiones/impresiones.compo
 import { InfluenciasComponent } from './components/influencias/influencias.component';
 import { InteraccionesComponent } from './components/interacciones/interacciones.component';
 import { TipoUsuariosComponent } from './components/tipo-usuarios/tipo-usuarios.component';
+import { GraficoVolumenDiaComponent } from './components/volumen/grafico-volumen-dia/grafico-volumen-dia.component';
+import { GraficoVolumenEtiquetaComponent } from './components/volumen/grafico-volumen-etiqueta/grafico-volumen-etiqueta.component';
+import { GraficoVolumenHoraComponent } from './components/volumen/grafico-volumen-hora/grafico-volumen-hora.component';
+import { GraficoVolumenMinutoComponent } from './components/volumen/grafico-volumen-minuto/grafico-volumen-minuto.component';
+import { GraficoVolumenSentimientoComponent } from './components/volumen/grafico-volumen-sentimiento/grafico-volumen-sentimiento.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -40,6 +46,22 @@ const routes: Routes = [
   {
     path: 'edad',
     component: EdadComponent,
+  },
+  {
+    path: 'volumen_dia',
+    component: GraficoVolumenDiaComponent,
+  },{
+    path: 'volumen_hora',
+    component: GraficoVolumenHoraComponent,
+  },{
+    path: 'volumen_minuto',
+    component: GraficoVolumenMinutoComponent,
+  },{
+    path: 'volumen_sentimiento',
+    component: GraficoVolumenSentimientoComponent
+  },{
+    path: 'volumen_etiqueta',
+    component: GraficoVolumenEtiquetaComponent
   }
 
 ];

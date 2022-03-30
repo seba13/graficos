@@ -18,6 +18,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import { GraficoVolumenDiaComponent } from './components/volumen/grafico-volumen-dia/grafico-volumen-dia.component';
+import { GraficoVolumenHoraComponent } from './components/volumen/grafico-volumen-hora/grafico-volumen-hora.component';
+import { GraficoVolumenMinutoComponent } from './components/volumen/grafico-volumen-minuto/grafico-volumen-minuto.component';
+import { GraficoVolumenSentimientoComponent } from './components/volumen/grafico-volumen-sentimiento/grafico-volumen-sentimiento.component';
+import { GraficoVolumenEtiquetaComponent } from './components/volumen/grafico-volumen-etiqueta/grafico-volumen-etiqueta.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +36,12 @@ import { MatInputModule } from '@angular/material/input';
     CompartidosComponent,
     TipoUsuariosComponent,
     EdadComponent,
+    GraficoVolumenDiaComponent,
+    GraficoVolumenHoraComponent,
+    GraficoVolumenMinutoComponent,
+    GraficoVolumenSentimientoComponent,
+    GraficoVolumenEtiquetaComponent,
+  
     
   ],
   imports: [
@@ -43,6 +56,8 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSidenavModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
